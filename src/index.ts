@@ -11,6 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const pool = new Pool({
+    ssl: {
+        rejectUnauthorized: false
+    },
     connectionString: DB_CONNECTION
 });
 
